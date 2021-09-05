@@ -32,8 +32,12 @@ nextBtn.addEventListener("click", () => {
 function clickHandler() {
   table.style.display = "block";
   errorMsg.style.display = "none";
-  if (billInput.value <= cashGivenInput.value) {
-    let returnedCash = cashGivenInput.value - billInput.value;
+
+   const billInputValue = Number(billInput.value);
+   const cashGivenInputValue = Number(cashGivenInput.value);
+
+  if (billInputValue <= cashGivenInputValue) {
+    let returnedCash = cashGivenInputValue - billInputValue;
     for (let i = 0; i < notesList.length; i++) {
       const noOfNotes = Math.trunc(returnedCash / notesList[i]);
       returnedCash = returnedCash % notesList[i];
