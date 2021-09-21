@@ -7,3 +7,8 @@ This app will tell hellp you in returning the change to the customer with minimu
 - It will not accept negative bill amount
 - It will not accept negative cash given amount
 
+## Tech Stack
+
+- HTML
+- CSS
+- JavaScript
