@@ -40,14 +40,18 @@ function clickHandler() {
     errorMsg.style.display = "block";
     errorMsg.innerText = "Please Enter Valid Bill Amount";
     table.style.display = "none";
-  }
-
-  if (cashGivenInput.value < 0) {
+  } else if (cashGivenInput.value < 0) {
     errorMsg.style.display = "block";
     errorMsg.innerText = "Please Enter Valid Cash Given Amount";
     table.style.display = "none";
   } else {
     if (billInputValue <= cashGivenInputValue) {
+      if (billInputValue == cashGivenInputValue) {
+        table.style.display = "none";
+        errorMsg.style.display = "block";
+        errorMsg.innerText = `No need for change`;
+      }
+
       let returnedCash = cashGivenInputValue - billInputValue;
       for (let i = 0; i < notesList.length; i++) {
         const noOfNotes = Math.trunc(returnedCash / notesList[i]);
@@ -57,6 +61,7 @@ function clickHandler() {
     } else {
       errorMsg.style.display = "block";
       errorMsg.innerText = "do you wanna wash plates?";
+      table.style.display = "none";
     }
   }
 }
