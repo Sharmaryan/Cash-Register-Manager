@@ -37,12 +37,7 @@ function clickHandler() {
   const billInputValue = Number(billInput.value);
   const cashGivenInputValue = Number(cashGivenInput.value);
 
-  if (
-    cashGivenInput.value == "" ||
-    billInput.value == "" ||
-    cashGivenInput.value < 0 ||
-    billInput.value < 0
-  ) {
+  if (cashGivenInput.value == "" ||billInput.value == "" ||cashGivenInput.value < 0 ||billInput.value < 0) {
     if (billInput.value < 0 || cashGivenInput.value < 0) {
       showMsg.style.display = "block";
       showMsg.innerText = "Please Enter Valid Amount";
