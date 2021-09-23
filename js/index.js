@@ -38,13 +38,9 @@ function clickHandler() {
   const cashGivenInputValue = Number(cashGivenInput.value);
 
   if (cashGivenInput.value == "" ||billInput.value == "" ||cashGivenInput.value <= 0 ||billInput.value <= 0) {
-    if (billInput.value < 0 || cashGivenInput.value < 0) {
+    if (billInput.value <= 0 || cashGivenInput.value <= 0) {
       showMsg.style.display = "block";
       showMsg.innerText = "Please Enter Valid Amount";
-      table.style.display = "none";
-    } else if (billInput.value == 0 || cashGivenInput.value == 0) {
-      showMsg.style.display = "block";
-      showMsg.innerText = "Zero is not allowed";
       table.style.display = "none";
     } else {
       showMsg.style.display = "block";
