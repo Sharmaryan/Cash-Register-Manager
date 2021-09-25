@@ -21,10 +21,11 @@ nextBtn.addEventListener("click", () => {
     showMsg.style.display = "none";
     cashGivenSection.style.display = "block";
     nextBtn.style.display = "none";
-  } else if (billInput.value == "0") {
+  } else if (billInput.value <= "0" ) {
     showMsg.style.display = "block";
     showMsg.innerText = "Please Enter Valid Bill Amount";
-  } else {
+  }
+  else {
     showMsg.style.display = "block";
     showMsg.innerText = "you can't leave bill amount empty";
   }
