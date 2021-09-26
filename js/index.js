@@ -17,15 +17,15 @@ table.style.display = "none";
 showMsg.style.display = "none";
 
 nextBtn.addEventListener("click", () => {
+
   if (billInput.value >= 1) {
     showMsg.style.display = "none";
     cashGivenSection.style.display = "block";
     nextBtn.style.display = "none";
-  } else if (billInput.value <= "0" ) {
+  } else if (billInput.value < 0 || billInput.value == "0") {
     showMsg.style.display = "block";
     showMsg.innerText = "Please Enter Valid Bill Amount";
-  }
-  else {
+  }  else {
     showMsg.style.display = "block";
     showMsg.innerText = "you can't leave bill amount empty";
   }
